@@ -1,0 +1,108 @@
+﻿@model StudentStreamingSystem.Context.StudentResult
+
+@{
+    ViewBag.Title = "CreateEnrollCourse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CreateEnrollCourse</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @*<h3 style="color:green;text-align:center">@Html.Flash()</h3>*@
+        <h4>Save Student Result</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.StudentID, "ApNo", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.StudentID, ViewBag.Students as SelectList, "--Select--", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.StudentID, "Name", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" readonly="readonly" name="StudentName" id="StudentName" class="form-control" />
+            </div>
+        </div>*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.StudentID, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" readonly="readonly" name="StudentEmail" id="StudentEmail" class="form-control" />
+            </div>
+        </div>
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.StudentId, "Department", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" readonly="readonly" name="DepartmentId" id="DepartmentId" class="form-control" />
+            </div>
+        </div>*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.CourseID, "Course", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CourseID, ViewBag.Courses as SelectList, "--Select--", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CourseID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Grade, "Grade ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Grade, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Grade, "", new { @class = "text-danger" })
+                </div>            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script>
+
+
+        $(document).ready(function () {
+            $("#StudentId").change(function () {
+                var studentId = $("#StudentId").val();
+                $("#StudentEmail").val('');
+                var parameter = { studentId: studentId }
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetStudentNameEmailDeptByRegNo", "StudentResult")',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(parameter),
+                    success: function (data) {
+                        debugger;
+                        $("#StudentEmail").val(data.Email);
+                    }
+                });
+
+
+            });
+
+            //$("#Date").datepicker();
+
+            //});
+        });
+    </script>
+}

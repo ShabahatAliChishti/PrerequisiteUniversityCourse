@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StudentStreamingDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AcademicStudentResult">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="CourseID" Type="int" Nullable="false" />
+    <Property Name="Grade" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Crhrs" Type="int" Nullable="false" />
+    <Property Name="TermID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="200" />
+    <Property Name="Password" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="CourseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CourseCreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CrHrs" Type="nvarchar" MaxLength="50" />
+    <Property Name="CourseCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ClassType" Type="nvarchar" MaxLength="50" />
+    <Property Name="ThemeColor" Type="nvarchar" MaxLength="50" />
+    <Property Name="BeginsAt" Type="datetime" />
+    <Property Name="EndsAt" Type="datetime" />
+    <Property Name="CourseType" Type="varchar" MaxLength="100" />
+    <Property Name="RoomName" Type="nvarchar" MaxLength="50" />
+    <Property Name="No_Of_Seats" Type="int" />
+    <Property Name="TermID" Type="int" />
+    <Property Name="PrerequisiteID" Type="int" />
+    <Property Name="TestName" Type="nvarchar" MaxLength="50" />
+    <Property Name="TestTermName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'StudentStreamingDB.dbo.Course_has_PreRequisite' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Course_has_PreRequisite">
+    <Key>
+      <PropertyRef Name="CourseID" />
+      <PropertyRef Name="PrerequisiteID" />
+    </Key>
+    <Property Name="CourseID" Type="int" Nullable="false" />
+    <Property Name="PrerequisiteID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prerequisites">
+    <Key>
+      <PropertyRef Name="PrerequisiteID" />
+    </Key>
+    <Property Name="PrerequisiteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Credits" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rooms">
+    <Key>
+      <PropertyRef Name="RoomID" />
+    </Key>
+    <Property Name="RoomID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Capacity" Type="int" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="200" />
+    <Property Name="APNo" Type="int" />
+  </EntityType>
+  <EntityType Name="StudentCourseSelection">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudentResult">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="CourseID" Type="int" Nullable="false" />
+    <Property Name="Grade" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Crhrs" Type="int" Nullable="false" />
+    <Property Name="TermID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Term">
+    <Key>
+      <PropertyRef Name="TermID" />
+    </Key>
+    <Property Name="TermID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TermName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TimeTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseName" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Credits" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ClassType" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CourseType" Type="nvarchar" MaxLength="1000" />
+    <Property Name="BeginsAt" Type="datetime" />
+    <Property Name="EndsAt" Type="datetime" />
+    <Property Name="ThemeColor" Type="nvarchar" MaxLength="1000" />
+    <Property Name="StudentId" Type="int" />
+    <Property Name="RoomName" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="Tutor">
+    <Key>
+      <PropertyRef Name="TutorID" />
+    </Key>
+    <Property Name="TutorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_StudentResult_Course">
+    <End Role="Course" Type="Self.Course" Multiplicity="1" />
+    <End Role="StudentResult" Type="Self.StudentResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="CourseID" />
+      </Principal>
+      <Dependent Role="StudentResult">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TimeTable_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="TimeTable" Type="Self.TimeTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="TimeTable">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="get_SelectedCourse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CourseId" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="StudentStreamingDBModelStoreContainer">
+    <EntitySet Name="AcademicStudentResult" EntityType="Self.AcademicStudentResult" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prerequisites" EntityType="Self.Prerequisites" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentCourseSelection" EntityType="Self.StudentCourseSelection" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentResult" EntityType="Self.StudentResult" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Term" EntityType="Self.Term" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TimeTable" EntityType="Self.TimeTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tutor" EntityType="Self.Tutor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Course_has_PreRequisite" EntityType="Self.Course_has_PreRequisite" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Course_has_PreRequisite].[CourseID] AS [CourseID], 
+    [Course_has_PreRequisite].[PrerequisiteID] AS [PrerequisiteID]
+    FROM [dbo].[Course_has_PreRequisite] AS [Course_has_PreRequisite]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_StudentResult_Course" Association="Self.FK_StudentResult_Course">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="StudentResult" EntitySet="StudentResult" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TimeTable_Student" Association="Self.FK_TimeTable_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="TimeTable" EntitySet="TimeTable" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

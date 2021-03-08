@@ -1,0 +1,34 @@
+CourseNo,CourseName,Programme,Campus,Credits,Streams,ClassType,BeginsAt,EndsAt,CourseType,RoomName
+IT4100 ,IT4100 IT Essentials ,NZCIT,Petone,15,1,Lecture,10/5/20 9:00,10/5/20 10:30,Compulsory,B101
+IT4100 ,IT4100 IT Essentials ,NZCIT,Petone,15,1,Lab,6/10/2020  13:00:00 pm,                     6/10/2020  14:30:00 pm,Compulsory,B102
+IT4100 ,IT4100 IT Essentials ,NZCIT,Petone,15,1,Lab,10/7/20 11:00,10/7/20 11:30,Compulsory,B103
+IT5116 ,IT5116 Database Administration,NZDIPIT,Petone,15,2,Lab,10/8/20 14:00,10/8/20 14:30,Compulsory,B106
+IT5117 ,IT5117 Hardware Servicing,NZDIPIT,Petone,15,2,Lecture,10/5/20 15:00,10/5/20 15:30,Compulsory,B107
+IT5118 ,IT5118 Professional Practice,NZDIPIT,Petone,15,2,Lab,10/7/20 16:00,10/7/20 16:30,Compulsory,B108
+IT5119 ,IT5119 IT Technical Support,NZDIPIT,Petone,15,2,Lecture,10/7/20 17:00,10/7/20 17:30,Compulsory,B109
+IT5120 ,IT5120 Server Management,NZDIPIT,Petone,15,2,Lab,10/5/20 18:00,10/5/20 18:30,Compulsory,B110
+IT5121 ,IT5121 Fundamentals of Programming & Problem Solving,NZDIPIT,Petone,15,2,Lecture,10/5/20 19:00,10/5/20 19:30,Compulsory,B111
+IT5122 ,IT5122 Implementing Networks,BIT,Petone,15,2,Lab,10/5/20 20:00,10/5/20 20:30,Compulsory,B112
+IT5502 ,IT5502 Communications for IT ,BIT,Petone,15,3,Lecture,10/5/20 21:00,10/5/20 21:30,Compulsory,B113
+IT5503 ,IT5503 Programming I,BIT,Petone,15,3,Lab,10/5/20 22:00,10/5/20 22:30,Compulsory,B114
+IT5505 ,IT5505 Interaction Design Fundamentals ,BIT,Petone,15,2,Lecture,10/5/20 23:00,10/5/20 23:30,Compulsory,B115
+IT5509 ,IT5509 - Software Testing Fundamentals ,BIT,Petone,15,2,Lab,10/6/20 0:00,10/6/20 0:30,Compulsory,B116
+IT5510 ,IT5510 Introduction to Operating Systems ,BIT GDIPIT,Petone,15,2,Lecture,10/6/20 1:00,10/6/20 1:30,Compulsory,B117
+IT6502 ,IT6502 Project Management,BIT GDIPIT,Petone,15,4,Lab,10/6/20 2:00,10/6/20 2:30,Compulsory,B118
+CS6503 ,CS6503 Digital Forensics,BIT GDIPIT,Petone,15,2,Lecture,10/6/20 3:00,10/6/20 3:30,Compulsory,B119
+CS6504 ,CS6504 Cryptography and Block chain Fundamentals,BIT GDIPIT,Petone,15,2,Lab,10/6/20 4:00,10/6/20 4:30,Compulsory,B120
+ID6501 ,ID6501 Responsive Website Design,BIT GDIPIT,Petone,15,1,Lecture,10/6/20 5:00,10/6/20 5:30,Compulsory,B121
+NI6502 ,NI6502 Networking III,BIT GDIPIT,Petone,15,1,Lab,10/6/20 6:00,10/6/20 6:30,Compulsory,B122
+NI6504 ,NI6504 Cloud Computing,BIT GDIPIT,Petone,15,3,Lecture,10/6/20 7:00,10/6/20 7:30,Compulsory,B123
+SD6503 ,SD6503 Testing and Secure Coding,BIT GDIPIT,Petone,15,2,Lab,10/6/20 8:00,10/6/20 8:30,Compulsory,B124
+SD6504 ,SD6504 Game Development,BIT GDIPIT GDIPCybersec,Petone,15,3,Lecture,10/6/20 9:00,10/6/20 9:30,Compulsory,B125
+IA7308 ,IA7308 Security Testing and Network Defence ,BIT GDIPIT GDIPCybersec,Petone,15,1,Lab,10/8/20 10:00,10/8/20 10:30,Compulsory,B126
+IA7307 ,IA7307 Cryptography and Security Mechanisms ,BIT GDIPIT,Petone,15,1,Lecture,10/6/20 11:00,10/6/20 11:30,Compulsory,B127
+IT7502 ,IT7502 Digital Ethics,BIT GDIPIT,Petone,15,1,Lab,10/6/20 12:00,10/6/20 12:30,Compulsory,B128
+CS7506  ,CS7506  Cloud Security,BIT GDIPIT,Petone,15,1,Lecture,10/9/20 13:00,10/9/20 13:30,Compulsory,B129
+CS7502 ,CS7502 Special Topic in Cyber Security,BIT GDIPIT,Petone,15,1,Lab,10/10/20 14:00,10/10/20 14:30,Compulsory,B130
+ID7502 ,ID7502 Human Computer Interaction,BIT GDIPIT,Petone,15,1,Lecture,10/11/20 15:00,10/11/20 15:30,Compulsory,B131
+NI7502 ,NI7502 Emerging topic in Networking and Infrastructure,BIT GDIPIT,Petone,15,1,Lab,10/6/20 16:00,10/6/20 16:30,Compulsory,B132
+SD7502 ,SD7502 Intelligent Systems Development,BIT   GDIPIT,Petone,15,2,Lecture,10/6/20 17:00,10/6/20 17:30,Compulsory,B133
+Capstone ,Capstone Project (coordination) ,BIT,Petone,45,2,Lab,10/6/20 18:00,10/6/20 18:30,Compulsory,B134
+IT7508 ,IT7508 Internship,,Petone,15,2,Lecture,10/6/20 19:00,10/6/20 19:30,Optional,B135
